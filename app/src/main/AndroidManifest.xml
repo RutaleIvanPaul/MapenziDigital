@@ -3,6 +3,8 @@
           xmlns:dist="http://schemas.android.com/apk/distribution"
           package="com.kotlin.ivanpaulrutale.mapenzidigital">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <dist:module dist:instant="true"/>
 
     <application
@@ -12,8 +14,25 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".views.OrderActivity"
+                  android:label="Order">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".views.MainActivity"/>
+        </activity>
+        <activity android:name=".views.ContactActivity"
+                  android:label="Contact Us">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".views.MainActivity"/>
+        </activity>
+        <activity android:name=".views.ItemDetails">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".views.MainActivity"/>
+        </activity>
         <activity
-                android:name=".MainActivity"
+                android:name=".views.MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

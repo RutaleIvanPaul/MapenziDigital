@@ -1,4 +1,4 @@
-package com.kotlin.ivanpaulrutale.mapenzidigital
+package com.kotlin.ivanpaulrutale.mapenzidigital.views
 
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
@@ -8,9 +8,11 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
+import com.kotlin.ivanpaulrutale.mapenzidigital.R
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -21,20 +23,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+        replaceFragment(FragmentTemplate.newInstance("Home"))
     }
 
     override fun onBackPressed() {
@@ -64,28 +65,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        var newFragment:FragmentTemplate?=null
         when (item.itemId) {
             R.id.nav_home -> {
-                // Handle the camera action
+                newFragment = FragmentTemplate.newInstance("Home")
             }
-            R.id.nav_gallery -> {
+            R.id.nav_videography -> {
+                newFragment = FragmentTemplate.newInstance("Videography")
+            }
+            R.id.nav_photography -> {
+                newFragment = FragmentTemplate.newInstance("Photography")
+            }
+            R.id.nav_portfolio -> {
+                newFragment = FragmentTemplate.newInstance("Portfolio")
+            }
+            R.id.nav_our_team -> {
+                newFragment = FragmentTemplate.newInstance("Team")
+            }
+            R.id.nav_contact -> {
+                newFragment = FragmentTemplate.newInstance("Contact")
+            }
+            R.id.nav_order -> {
+                newFragment = FragmentTemplate.newInstance("Order")
+            }
 
-            }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_tools -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
+        replaceFragment(newFragment!!)
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun replaceFragment(fragment: Fragment){
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.content_frame,fragment)
+        fragmentTransaction.commit()
     }
 }
