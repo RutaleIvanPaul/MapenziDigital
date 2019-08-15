@@ -20,6 +20,14 @@ class FragmentTemplate : Fragment() {
 
     val customAdapter = CustomAdapter()
 
+    val dummyText = "Lorem Ipsum is simply dummy text of the printing and " +
+            "typesetting industry. Lorem Ipsum has been the industry's standard dummy " +
+            "text ever since the 1500s, when an unknown printer took a galley of type and " +
+            "scrambled it to make a type specimen book. It has survived not only five centuries, " +
+            "but also the leap into electronic typesetting, remaining essentially unchanged. " +
+            "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages," +
+            " and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -50,13 +58,13 @@ class FragmentTemplate : Fragment() {
             "Home"->{
                 val items :ArrayList<ListItem> = arrayListOf(
                     ListItem("This",
-                        "Description Description Description",
+                        dummyText,
                     "https://mapenzi.ug/wp-content/uploads/2019/07/53532486_791018341268355_708211356599320576_o.jpg"),
                     ListItem("Is",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/Photography-1-550x300.jpg"),
                     ListItem("Home",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/32145409_587134394990085_1576106960154001408_n-570x300.jpg")
                 )
 
@@ -66,13 +74,13 @@ class FragmentTemplate : Fragment() {
             "Videography"->{
                 val items :ArrayList<ListItem> = arrayListOf(
                     ListItem("This",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/53532486_791018341268355_708211356599320576_o.jpg"),
                     ListItem("Is",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/Photography-1-550x300.jpg"),
                     ListItem("Videography",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/32145409_587134394990085_1576106960154001408_n-570x300.jpg")
                 )
 
@@ -83,13 +91,13 @@ class FragmentTemplate : Fragment() {
             "Photography"->{
                 val items :ArrayList<ListItem> = arrayListOf(
                     ListItem("This",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/53532486_791018341268355_708211356599320576_o.jpg"),
                     ListItem("Is",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/Photography-1-550x300.jpg"),
                     ListItem("Photography",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/32145409_587134394990085_1576106960154001408_n-570x300.jpg")
                 )
 
@@ -100,13 +108,13 @@ class FragmentTemplate : Fragment() {
             "Portfolio"->{
                 val items :ArrayList<ListItem> = arrayListOf(
                     ListItem("This",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/53532486_791018341268355_708211356599320576_o.jpg"),
                     ListItem("Is",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/Photography-1-550x300.jpg"),
                     ListItem("Portfolio",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/32145409_587134394990085_1576106960154001408_n-570x300.jpg")
                 )
 
@@ -117,13 +125,13 @@ class FragmentTemplate : Fragment() {
             "Team"->{
                 val items :ArrayList<ListItem> = arrayListOf(
                     ListItem("This",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/53532486_791018341268355_708211356599320576_o.jpg"),
                     ListItem("Is",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/Photography-1-550x300.jpg"),
                     ListItem("Team",
-                        "Description Description Description",
+                        dummyText,
                         "https://mapenzi.ug/wp-content/uploads/2019/07/32145409_587134394990085_1576106960154001408_n-570x300.jpg")
                 )
 
