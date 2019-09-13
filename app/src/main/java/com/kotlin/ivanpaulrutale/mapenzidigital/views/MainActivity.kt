@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
-        replaceFragment(FragmentTemplate.newInstance("Home"))
+        replaceFragment(FragmentTemplate.newInstance("Portfolio"))
     }
 
     override fun onBackPressed() {
@@ -65,32 +65,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
-        var newFragment:FragmentTemplate?=null
         when (item.itemId) {
             R.id.nav_home -> {
-                newFragment = FragmentTemplate.newInstance("Home")
-            }
-            R.id.nav_videography -> {
-                newFragment = FragmentTemplate.newInstance("Videography")
-            }
-            R.id.nav_photography -> {
-                newFragment = FragmentTemplate.newInstance("Photography")
+                var editMessageFragment = EditMessageFragment()
+                replaceFragment(editMessageFragment)
             }
             R.id.nav_portfolio -> {
+                var newFragment:FragmentTemplate?=null
                 newFragment = FragmentTemplate.newInstance("Portfolio")
-            }
-            R.id.nav_our_team -> {
-                newFragment = FragmentTemplate.newInstance("Team")
-            }
-            R.id.nav_contact -> {
-                newFragment = FragmentTemplate.newInstance("Contact")
-            }
-            R.id.nav_order -> {
-                newFragment = FragmentTemplate.newInstance("Order")
+                replaceFragment(newFragment!!)
             }
 
         }
-        replaceFragment(newFragment!!)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)

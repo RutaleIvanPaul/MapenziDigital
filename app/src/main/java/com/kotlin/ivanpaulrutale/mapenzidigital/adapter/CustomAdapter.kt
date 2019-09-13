@@ -29,7 +29,6 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
         val item = listItems[position]
         holder.titleTextView.text = item.title
         holder.descriptionTextView.text = item.description
-        Picasso.with(holder.itemView.context).load(item.image).into(holder.imageView)
 
         holder.itemView.setOnClickListener {view ->
             val intent = Intent(view.context, ItemDetails::class.java)
@@ -43,7 +42,6 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
     class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val titleTextView = itemView.findViewById(R.id.titleTextView) as TextView
         val descriptionTextView = itemView.findViewById(R.id.descriptionTextView) as TextView
-        val imageView = itemView.findViewById<ImageView>(R.id.list_item_image)!!
     }
 
 }

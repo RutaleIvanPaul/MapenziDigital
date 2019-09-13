@@ -18,12 +18,9 @@ class ItemDetails : AppCompatActivity() {
         val description = intent.getStringExtra("description")
         val image = intent.getStringExtra("image")
 
-        val imageView = findViewById<ImageView>(R.id.itemImage)
 
 
         findViewById<TextView>(R.id.titleTextView).text = title
         findViewById<TextView>(R.id.descriptionTextView).text = description
-
-        Picasso.with(imageView.context).load(image).into(imageView)
     }
 }
