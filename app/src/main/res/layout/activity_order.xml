@@ -25,58 +25,26 @@
                 android:typeface="serif"/>
 
 
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:hint="@string/client_name"
-                android:inputType="textPersonName"/>
-
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/colorAccent"
-                android:hint="@string/email"
-                android:inputType="textEmailAddress"/>
-
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:hint="@string/phone_number"
-                android:inputType="phone"/>
-
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:hint="@string/company"
-                android:inputType="text"/>
-
-        <include
-                android:id="@+id/spinner"
-                layout="@layout/spinner"
+        <CheckBox
+                android:id="@+id/checkBox1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:layout_marginTop="10dp"/>
+                android:layout_height="wrap_content"
+                android:text="Service 1" />
 
+        <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service 2" />
 
-        <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="150dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/colorAccent"
-                android:gravity="top"
-                android:hint="@string/message"
-                android:fitsSystemWindows="true"
-                android:breakStrategy="balanced"
-                android:inputType="textMultiLine"
-                android:singleLine="false"
-                android:padding="5dp"/>
+        <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service 3" />
 
         <Button
+                android:id="@+id/submit_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -85,6 +53,6 @@
                 android:paddingLeft="70dp"
                 android:paddingRight="70dp"
                 android:text="@string/submit"
-                android:textColor="#fff"/>
+                android:textColor="#fff" />
     </LinearLayout>
 </ScrollView>
