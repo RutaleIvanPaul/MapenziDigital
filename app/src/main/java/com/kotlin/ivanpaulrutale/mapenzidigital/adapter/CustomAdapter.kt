@@ -36,6 +36,7 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
             intent.putExtra("title",item.title)
             intent.putExtra("description",item.description)
             intent.putExtra("image",item.image)
+            intent.putExtra("video",item.video)
             view.context.startActivity(intent)
         }
     }

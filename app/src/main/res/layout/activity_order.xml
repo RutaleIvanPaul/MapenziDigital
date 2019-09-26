@@ -4,7 +4,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:scrollbarStyle="outsideOverlay"
-        android:padding="16dp" xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
                   android:layout_width="match_parent"
@@ -29,19 +29,337 @@
                 android:id="@+id/checkBox1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Service 1" />
+                android:text="QR code access control - UGX2,000,00"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:id="@+id/checkedTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Events management with onsite access control with QR-codes and Bar-codes and back end access of the database" />
 
         <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Service 2" />
+                android:text="E-ticketing and e-cards - UGX1,500,00"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <CheckedTextView
+                android:id="@+id/checkedTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Event e-ticketing management and solutions including e-cards like e-posters for all kinds of events" />
 
         <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Service 3" />
+                android:text="Social media management - UGX3,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <CheckedTextView
+                android:id="@+id/checkedTextView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Social media  management solutions and digital marketing with use of info graphic designing for commercial purposes" />
+
+        <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Website analytics - UGX3,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <CheckedTextView
+                android:id="@+id/checkedTextView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Website analytics involving website designing, marketing and management" />
+
+        <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Audio Visual - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corporate grade Audio Visual services including wireless microphones and lavalieres and a mixer for audio control of conferences and other large audience events" />
+
+        <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video shoot - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video Production for product and personality marketing and management" />
+
+        <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Business cards, posters - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Print media designing of business cards, banners, posters for commercial purposes" />
+
+        <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Animations - UGX2,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Motion graphic designing which includes animations, a voice over artist for narrations and  a script writer to create an attractive script" />
+        <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Public Relations - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Online Public Relation Services like e-branding, advertising and online press releases for product and personality arrangements" />
+        <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="YouTube channels - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Setup of YouTube channels and live video streaming services for conferences, product and personality reasons" />
+        <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search Engine Management - UGX2,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Events management with onsite access control with QR-codes and Bar-codes and back end access of the database" />
+        <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-mail  management - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="E-mail marketing and management with e-mail follow ups, RSVP follow-ups and attendance confirmation of events." />
+        <CheckBox
+                android:id="@+id/checkBox13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay-Per-Click - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay Per Click Advertising which helps in boosting our clients' website performances by appearing on all search engines and major social media platforms" />
+        <CheckBox
+                android:id="@+id/checkBox14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reputation Management - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reputation Management Services for products and personalities through brand preservation, strategic advertising and monitoring of clients' online reputations" />
+        <CheckBox
+                android:id="@+id/checkBox15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Photography - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quality photography of about 6hours of an event with studio setting of back droops and lighting" />
+        <CheckBox
+                android:id="@+id/checkBox16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Videography - UGX1,200,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quality videography of about 6 hours with studio setting of backdrops and lighting, 360 camera, and editing of the footage" />
+        <CheckBox
+                android:id="@+id/checkBox17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Content Management - UGX800,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Online Content generation, marketing and management of our clients  media accounts which strengthens our clients business stories and attracts new prospects" />
+
+        <CheckBox
+                android:id="@+id/checkBox18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile Marketing - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile Optimization like mobile website designing and mobile social media advertising." />
+        <CheckBox
+                android:id="@+id/checkBox19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QR coded cards - UGX1,200,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Creation of QR-code business cards and Identification cards for easy access  of various events" />
+        <CheckBox
+                android:id="@+id/checkBox20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conversion Management - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conversion optimization which involves using attractive strategies to change the clients' viewers into buying customers" />
+        <CheckBox
+                android:id="@+id/checkBox21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hour photo shoot - UGX1,000,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="One hour photo shoots for product and personality purposes involving make-up and dressing artists with both indoor and outdoor studio setting plus an extra hour for rehearsals." />
+        <CheckBox
+                android:id="@+id/checkBox22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Printed tags and cards - UGX800,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Printing services for both commercial and corporate purposes whereby we print identification tags and business cards with QR codes.   " />
+        <CheckBox
+                android:id="@+id/checkBox23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Footage sales - UGX700,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sale of footage shot by Mapenzi Digital for documentary and advertising purposes" />
+        <CheckBox
+                android:id="@+id/checkBox24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Architectural deign - UGX1,300,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3D Architectural computer motion graphic designing" />
+        <CheckBox
+                android:id="@+id/checkBox25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UI and UX design - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UI and UX interface layout designing whereby we design a short video/animation advert of our clients’ websites and apps for marketing purposes" />
+        <CheckBox
+                android:id="@+id/checkBox26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Documentary Production - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Documentary production services where we shoot a client’s  life for a week and provide 2 DVDs and an online version on a secured server" />
+        <CheckBox
+                android:id="@+id/checkBox27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customizing websites - UGX1,500,000"
+                android:background="@drawable/border"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <CheckedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customization websites where our clients can make their own designs for any category i.e. shirts, caps, business cards, banners and so much more for printing purposes."/>
 
         <Button
                 android:id="@+id/submit_order"
@@ -54,5 +372,6 @@
                 android:paddingRight="70dp"
                 android:text="@string/submit"
                 android:textColor="#fff" />
+
     </LinearLayout>
 </ScrollView>

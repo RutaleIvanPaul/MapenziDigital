@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+<android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
                                              android:layout_height="wrap_content">
     <ImageView
             android:id="@+id/itemImage"
@@ -42,6 +48,24 @@
             app:layout_constraintTop_toBottomOf="@+id/titleTextView"
             tools:text="Sample title for news title that will and this will display how text shows up on the news app" />
 
+    <Button
+            android:id="@+id/watch_trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:elevation="4dp"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/watch_trailer"
+            android:textColor="#fff"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
 
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
