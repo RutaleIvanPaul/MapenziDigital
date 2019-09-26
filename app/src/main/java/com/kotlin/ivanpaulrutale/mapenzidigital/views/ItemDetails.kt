@@ -1,7 +1,11 @@
 package com.kotlin.ivanpaulrutale.mapenzidigital.views
 
+import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.kotlin.ivanpaulrutale.mapenzidigital.R
@@ -17,6 +21,8 @@ class ItemDetails : AppCompatActivity() {
         val title = intent.getStringExtra("title")
         val description = intent.getStringExtra("description")
         val image = intent.getStringExtra("image")
+        val video = intent.getStringExtra("video")
+        val watchVideoButton: Button = findViewById(R.id.watch_trailer)
 
         val imageView = findViewById<ImageView>(R.id.itemImage)
 
@@ -25,5 +31,14 @@ class ItemDetails : AppCompatActivity() {
         findViewById<TextView>(R.id.descriptionTextView).text = description
 
         Picasso.with(imageView.context).load(image).into(imageView)
+
+        if (video != ""){
+            watchVideoButton.visibility = View.VISIBLE
+            watchVideoButton.setOnClickListener {
+                val uri: Uri = Uri.parse(video)
+                val intent = Intent(Intent.ACTION_VIEW,uri)
+                startActivity(intent)
+            }
+        }
     }
 }
