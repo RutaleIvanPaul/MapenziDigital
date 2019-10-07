@@ -3,6 +3,7 @@ package com.kotlin.ivanpaulrutale.mapenzidigital.views
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -11,6 +12,10 @@ import android.widget.TextView
 import android.widget.Toast
 import com.kotlin.ivanpaulrutale.mapenzidigital.R
 import kotlinx.android.synthetic.main.activity_payment.*
+import kotlinx.android.synthetic.main.activity_payment_details.*
+import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import ug.co.yo.yopay.yopaymentslibrary.YoPay
 import ug.co.yo.yopay.yopaymentslibrary.YoPaymentsResponse
 import java.lang.IllegalArgumentException
@@ -20,16 +25,15 @@ import java.util.concurrent.ExecutionException
 
 class PaymentActivity : AppCompatActivity() {
 
-    val yoAPI: YoPay = YoPay("100118955773","z1gw-ybMI-ptek-jM0O-amJh-VkOJ-TeSt-2NSq")
     var waitTimeCounter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment)
 
-        val confirmOrderButton:Button = findViewById(R.id.confirm_order)
         val shoppingCart = intent.getIntegerArrayListExtra("shoppingCart")
         var shoppingCartTextArea:TextView = findViewById(R.id.descriptionTextView)
+        val confirmOrderButton:Button = findViewById(R.id.confirm_order)
         var shoppingCartString = ""
         var totalCharge:Double = 0.0
         if (shoppingCart.contains(1)){
@@ -145,32 +149,35 @@ class PaymentActivity : AppCompatActivity() {
 
 
         confirmOrderButton.setOnClickListener{
-            makePayment(totalCharge)
+            confirmOrderButton.isEnabled = false
+            confirmOrderButton.text = "Waiting ..."
+            progressBar.visibility = View.VISIBLE
+            startPayment(totalCharge)
         }
 
     }
 
-    private fun makePayment(total:Double) {
-        progressBar.visibility = View.VISIBLE
+    private fun startPayment(total:Double) {
         try {
             if (phonenumber.text.isEmpty() || phonenumber.text.length < 10 ){
                 throw IllegalArgumentException("Please Input a correct number!")
             }
             val trimmedNumber = "256"+phonenumber.text.substring(1,10)
 
-            yoAPI.nonBlocking = true
-           val response =  yoAPI.ac_deposit_funds(trimmedNumber,1000.0,"Mapenzi Digital Services")
-            Thread.sleep(5000)
-            val transactionReference = response.transactionReference
+            CoroutineScope(IO).launch {
+                val transactionReference = makePayment(trimmedNumber,total)
+                checkTransaction(transactionReference,trimmedNumber,total)
 
-            checkTransaction(transactionReference)
+            }
 
-            Log.i("YO PAY RESPONSE",response.toString())
+
         } catch (e: InterruptedException) {
-//            progressBar.visibility = View.INVISIBLE
+            progressBar.visibility = View.INVISIBLE
             e.printStackTrace()
+            Toast.makeText(this,"Something went wrong! Please retry",Toast.LENGTH_LONG).show()
+            startActivity(Intent(this,OrderActivity::class.java))
         } catch (e: ExecutionException) {
-//            progressBar.visibility = View.INVISIBLE
+            progressBar.visibility = View.INVISIBLE
             e.printStackTrace()
         } catch (e: IllegalArgumentException){
             e.printStackTrace()
@@ -179,31 +186,86 @@ class PaymentActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkTransaction(transactionReference: String?) {
+    private suspend fun makePayment(phoneNumber:String,amount:Double):String{
+        yoAPI.nonBlocking = true
+        val response =  yoAPI.ac_deposit_funds(phoneNumber,amount,"Mapenzi Digital Services")
+        delay(3000)
+        Log.i("YO PAY RESPONSE",response.toString())
+
+        if (response.transactionReference == null){
+            withContext(Main){
+                throw InterruptedException("Something went wrong! Please retry")
+            }
+        }
+
+        return response.transactionReference
+
+    }
+
+    private suspend fun checkTransaction(transactionReference: String?,phoneNumber: String,total: Double) {
         yoAPI.nonBlocking = true
         val transactionStatus = yoAPI.ac_check_transaction_status(transactionReference)
-        Thread.sleep(5000)
+        val confirmOrderButton:Button = findViewById(R.id.confirm_order)
+        val dialogBuilder = AlertDialog.Builder(this)
         if (transactionStatus == null){
-            Thread.sleep(10000)
+            delay(5000)
         }
         if (transactionStatus.transactionStatus.equals("success",ignoreCase = true)){
-//            progressBar.visibility = View.INVISIBLE
-            Toast.makeText(this,"Successfully Paid",Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,MainActivity::class.java))
+            withContext(Main){
+                titleTextView3.visibility = View.VISIBLE
+                clientLabel.visibility = View.VISIBLE
+                clientID.visibility = View.VISIBLE
+                amountLabel.visibility = View.VISIBLE
+                amount.visibility = View.VISIBLE
+                messageLabel.visibility = View.VISIBLE
+                message.visibility = View.VISIBLE
+
+
+                clientID.text = phoneNumber
+                amount.text = total.toString()
+                message.text = "SUCCESSFULLY PAID"
+                confirmOrderButton.text = "DONE"
+                progressBar.visibility = View.INVISIBLE
+
+                dialogBuilder.setTitle("Success")
+                dialogBuilder.setMessage("You have successfully paid.")
+                dialogBuilder.setPositiveButton("OK"){dialog,which ->
+                    startActivity(Intent(applicationContext,OrderActivity::class.java))
+                }
+            }
+
         }
-        else if (transactionStatus.transactionStatus.equals("pending",ignoreCase = true) && waitTimeCounter < 60){
-            progressBar.visibility = View.VISIBLE
-            Toast.makeText(this,"Transaction Pending, Please Wait!",Toast.LENGTH_LONG).show()
+        else if (transactionStatus.transactionStatus.equals("pending",ignoreCase = true) && waitTimeCounter < 36){
             Log.i("CHECKINGPENDINGTRNSCN",waitTimeCounter.toString())
             waitTimeCounter++
-            checkTransaction(transactionReference)
+            checkTransaction(transactionReference,phoneNumber,total)
         }
         else{
-            progressBar.visibility = View.INVISIBLE
-            Log.i("FAILED TRANSACTION",transactionStatus.errorMessage)
-            Toast.makeText(this,transactionStatus.errorMessage,Toast.LENGTH_LONG).show()
-            startActivity(Intent(this,OrderActivity::class.java))
+            withContext(Main){
+                titleTextView3.visibility = View.VISIBLE
+                clientLabel.visibility = View.VISIBLE
+                clientID.visibility = View.VISIBLE
+                amountLabel.visibility = View.VISIBLE
+                amount.visibility = View.VISIBLE
+                messageLabel.visibility = View.VISIBLE
+                message.visibility = View.VISIBLE
+
+                clientID.text = phoneNumber
+                amount.text = total.toString()
+                message.text = "FAILED TRANSACTION"
+                confirmOrderButton.isEnabled = true
+                confirmOrderButton.text = "Submit"
+                progressBar.visibility = View.INVISIBLE
+
+                dialogBuilder.setTitle("Failed")
+                dialogBuilder.setMessage("Transaction Failed. Are you sure the phone number is correct?")
+                dialogBuilder.setPositiveButton("OK"){ _, which ->
+                    startActivity(Intent(applicationContext,OrderActivity::class.java))
+                }
+            }
         }
     }
+
+
 
 }

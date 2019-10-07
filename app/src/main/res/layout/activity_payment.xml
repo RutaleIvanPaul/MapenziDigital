@@ -10,50 +10,63 @@
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/border"
             tools:context=".views.PaymentActivity">
 
         <TextView
                 android:id="@+id/titleTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:text="List of Services you have ordered for."
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
+                android:background="#d0d0d0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+                android:id="@+id/titleTextView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Please Input your mobile money number, click submit and await a response."
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+        <TextView
                 android:id="@+id/descriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
 
+                android:layout_marginEnd="8dp"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-                tools:text="Sample title for news title that will and this will display how text shows up on the news app" />
+                tools:text="Sample title for news title that will" />
 
-        <TextView
-                android:id="@+id/descriptionTextView2"
-                android:layout_width="0dp"
+        <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textStyle="bold"
+                android:layout_marginTop="48dp"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-                tools:text="Sample title for news title that will and this will display how text shows up on the news app" />
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
         <EditText
                 android:id="@+id/phonenumber"
@@ -62,10 +75,10 @@
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="number"
-                android:hint="Mobile Money Number"
+                android:hint="07XXXXXXXX"
                 app:layout_constraintEnd_toEndOf="@+id/titleTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView2" />
 
 
         <Button
@@ -79,6 +92,7 @@
                 android:paddingRight="70dp"
                 android:text="@string/submit"
                 android:textColor="#fff"
+                android:layout_marginBottom="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
@@ -86,15 +100,94 @@
                 app:layout_constraintTop_toBottomOf="@+id/phonenumber"
                 app:layout_constraintVertical_bias="0.0" />
 
-        <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
+
+        <TextView
+                android:id="@+id/titleTextView3"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Payment Details for your purchase"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirm_order" />
+
+        <TextView
+                android:id="@+id/clientLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Client ID: "
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView3" />
+
+        <TextView
+                android:id="@+id/clientID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="client ID"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/clientLabel"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView3" />
+
+        <TextView
+                android:id="@+id/amountLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Amount: "
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clientLabel" />
+
+        <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: "
+                android:layout_marginStart="8dp"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/amountLabel"
+                app:layout_constraintTop_toBottomOf="@+id/clientLabel" />
+
+        <TextView
+                android:id="@+id/messageLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Message: "
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amountLabel" />
+
+        <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/messageLabel"
+                app:layout_constraintTop_toBottomOf="@+id/amount" />
+
+
 
 
     </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.kotlin.ivanpaulrutale.mapenzidigital.R
+import ug.co.yo.yopay.yopaymentslibrary.YoPay
 
 fun populateSpinner(spinner:Spinner,context:Context) {
 
@@ -24,3 +25,6 @@ fun populateSpinner(spinner:Spinner,context:Context) {
         }
     }
 }
+
+val yoAPI: YoPay = YoPay("100118955773","z1gw-ybMI-ptek-jM0O-amJh-VkOJ-TeSt-2NSq")
+
