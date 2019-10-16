@@ -39,6 +39,7 @@ class FragmentTemplate : Fragment() {
     private fun loadContent(page: String?,view: View) {
         val webView = view.findViewById<WebView>(R.id.web_view)
         webView.webViewClient = MyWebClient(view)
+        webView.settings.javaScriptEnabled = true
         val progressBar =view.findViewById<ProgressBar>(R.id.webView_progressBar)
         when (page){
             "Home"->{

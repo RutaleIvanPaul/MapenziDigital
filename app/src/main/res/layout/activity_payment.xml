@@ -5,33 +5,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:scrollbarStyle="outsideOverlay"
+        android:background="#d0d0d0"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
     <android.support.constraint.ConstraintLayout
+            android:id="@+id/payment_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".views.PaymentActivity">
 
+        <LinearLayout
+                android:id="@+id/order_list"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
         <TextView
-                android:id="@+id/titleTextView"
+                android:id="@+id/descriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="List of Services you have ordered for."
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:textStyle="bold"
-                android:background="#d0d0d0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/order_list"
+                tools:text="Sample title for news title that will" />
 
         <TextView
                 android:id="@+id/titleTextView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:layout_marginEnd="8dp"
                 android:text="Please Input your mobile money number, click submit and await a response."
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@color/colorPrimary"
@@ -40,21 +46,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
-
-        <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-
-                android:layout_marginEnd="8dp"
-                android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-                tools:text="Sample title for news title that will" />
 
         <ProgressBar
                 android:id="@+id/progressBar"
@@ -74,9 +65,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="start|top"
-                android:inputType="number"
                 android:hint="07XXXXXXXX"
-                app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextView2" />
 

@@ -29,6 +29,11 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/qr_logo"
+                    android:layout_margin="10dp"/>
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -40,7 +45,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="QR code access control - UGX2,000,00"
+                        android:text="QR code access control - UGX2,000,000"
                         android:textColor="#000"
                         android:textSize="13sp" />
 
@@ -78,6 +83,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ticket_logo_red"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -129,6 +140,13 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/social_media"
+                    android:layout_margin="10dp"/>
+
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -182,6 +200,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/web_analytics_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -231,6 +256,13 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/av"
+                    android:layout_margin="10dp"/>
+
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -283,6 +315,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/video_shoot_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -334,6 +373,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/business_card"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -384,6 +430,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/animations_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -432,6 +485,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/pr"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -484,6 +543,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/youtube_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -532,6 +598,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/search"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -584,6 +656,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/email_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -634,6 +713,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/pay_click"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -668,7 +754,7 @@
         </LinearLayout>
 
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#fff"
@@ -684,6 +770,12 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/reputation_red" />
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -733,6 +825,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/photography"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -785,6 +883,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/videography_red"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -835,6 +940,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/content"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -883,6 +995,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/mobile_marketing_red"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -935,6 +1053,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/qr_logo"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -984,6 +1109,13 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/conversion_red"
+                    android:layout_margin="10dp"/>
+
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -1035,6 +1167,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/photoshoot"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1083,6 +1222,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/printed_red"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
@@ -1135,6 +1280,13 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/footage"
+                    android:layout_margin="10dp"/>
+
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1185,6 +1337,12 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/architectural_red"
+                    android:layout_margin="10dp"/>
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1195,7 +1353,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Architectural deign - UGX1,300,000"
+                        android:text="Architectural design - UGX1,300,000"
                         android:textColor="#000"
                         android:textSize="13sp" />
 
@@ -1234,6 +1392,13 @@
                     android:layout_height="50dp"
 
                     android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/uiux"
+                    android:layout_margin="10dp"/>
+
 
             <LinearLayout
                     android:layout_width="wrap_content"
@@ -1285,6 +1450,12 @@
 
                     android:layout_margin="10dp"/>
 
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/documentary_production_red"
+                    android:layout_margin="10dp"/>
+
             <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -1333,6 +1504,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
 
+                    android:layout_margin="10dp"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/custom"
                     android:layout_margin="10dp"/>
 
             <LinearLayout
