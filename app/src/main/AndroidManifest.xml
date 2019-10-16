@@ -29,13 +29,6 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value=".views.MainActivity" />
         </activity>
-        <activity
-                android:name=".views.ContactActivity"
-                android:label="Contact Us">
-            <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".views.MainActivity" />
-        </activity>
         <activity android:name=".views.ItemDetails">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
